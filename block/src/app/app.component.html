@@ -1,0 +1,10 @@
+<div>
+  <input type="text" placeholder="Apartment complex name" [(ngModel)]="apartmentName" />
+</div>
+<div><input type="number" placeholder="Total Number of Blocks" [(ngModel)]="totalBlocks"/></div>
+<div><input type="number" placeholder="Number of Towers" [(ngModel)]="totalTowers"/></div>
+<div><input type="number" placeholder="Number of Floors" [(ngModel)]="totalFloors" /></div>
+<div><input type="number" placeholder="No of Units" [(ngModel)]="totalUnits"/></div>
+<div class="button" (click)="saveApartment()">
+  Save
+</div>
