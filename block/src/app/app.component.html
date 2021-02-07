@@ -1,10 +1,36 @@
-<div>
-  <input type="text" placeholder="Apartment complex name" [(ngModel)]="apartmentName" />
+<div class="container">
+  <div>
+    <input type="text" placeholder="Apartment complex name" [(ngModel)]="apartmentName" />
+  </div>
+  <div>
+    <input type="number" placeholder="Total Number of Blocks" [(ngModel)]="totalBlocks" />
+  </div>
+  <div>
+    <input type="number" placeholder="Number of Towers" [(ngModel)]="totalTowers" />
+  </div>
+  <div>
+    <input type="number" placeholder="Number of Floors" [(ngModel)]="totalFloors" />
+  </div>
+  <div>
+    <input type="number" placeholder="No of Units" [(ngModel)]="totalUnits" />
+  </div>
+  <button (click)="saveApartment()" class="text-center">
+    Save
+  </button>
 </div>
-<div><input type="number" placeholder="Total Number of Blocks" [(ngModel)]="totalBlocks"/></div>
-<div><input type="number" placeholder="Number of Towers" [(ngModel)]="totalTowers"/></div>
-<div><input type="number" placeholder="Number of Floors" [(ngModel)]="totalFloors" /></div>
-<div><input type="number" placeholder="No of Units" [(ngModel)]="totalUnits"/></div>
-<div class="button" (click)="saveApartment()">
-  Save
+
+<div class="row container" style="margin-top: 10px;">
+  <div class="col-md-12" *ngFor="let unit of allApartmentUnits; let i=index" style="margin-top: 10px;">
+    {{i+1}}.
+    Unit name : {{unit.unit_name}} &nbsp; &nbsp; Block : {{unit.block_id}} &nbsp; &nbsp; Tower : {{unit.tower_id}} &nbsp; &nbsp; Floor: {{unit.floor_id}} &nbsp; &nbsp;  Status: {{unit.status}} &nbsp; &nbsp; Apartment Name: {{unit.apartmentName}}
+    <button *ngIf="unit.status_id != 3" (click)="updateStatus(unit)">Change Status</button>
+  </div>
+</div>
+
+<div class="row container" style="margin-top: 15px;">
+  Total Units : {{count.totalCount}}
+  Available Units : {{count.availableCount}}
+  Booked Units : {{count.bookedCount}}
+  Sold Units : {{count.soldCount}}
+
 </div>

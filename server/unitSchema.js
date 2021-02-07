@@ -6,6 +6,8 @@ const UnitSchema = new mongoose.Schema({
     tower_id: String,
     floor_id: String,
     block_id: String,
+    status: String,
+    status_id: Number
 
 });
 

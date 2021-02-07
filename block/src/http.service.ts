@@ -16,4 +16,12 @@ export class HttpService {
   getAllUnits() {
     return this.http.get(`http://localhost:3000/getAllUnits`);
   }
+
+  updateStatus(data) {
+    return this.http.post(`http://localhost:3000/updateStatus`, data)
+  }
+
+  getCount() {
+    return this.http.get(`http://localhost:3000/getCount`);
+  }
 }
